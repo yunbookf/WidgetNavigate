@@ -19,7 +19,7 @@ Some styles can be modified at any time:
 wn.height = 70;
 ```
 
-## 如果是 SPA 应用如何办 / How SPA
+## 如果是 SPA 的时候的操作办法 / How SPA
 
 很简单，只要绑定 onClick 事件不指定 url 属性即可：  
 Is very simple, only need to bind the onClick event:  
