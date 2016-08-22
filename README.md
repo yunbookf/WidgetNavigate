@@ -106,6 +106,7 @@ interface WidgetNavigateInstance {
 ```
 
 ## 关于 / About
+本组件由迈云网络开发开源，欢迎各位PR。  
 Powered by Maiyun.net, welcome to pull request.  
 http://www.maiyun.net  
   
