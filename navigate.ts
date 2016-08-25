@@ -75,7 +75,7 @@ class WidgetNavigate {
     set width(val: string) {
         if (val !== this._width) {
             this._width = val;
-            this.dom.children(".body").css({"width": this._width});
+            this.dom.children(".body").css({"max-width": this._width});
         }
     }
 
@@ -119,6 +119,8 @@ class WidgetNavigate {
                 this.height = opts.height;
             if (opts.width !== undefined)
                 this.width = opts.width;
+            if (opts.iconUrl !== undefined)
+                this.iconUrl = opts.iconUrl;
         }
     }
 
@@ -152,4 +154,29 @@ class WidgetNavigate {
     }
 
 }
+
+$("head").prepend(`<style>
+.widgetNavigate{border-bottom: 1px solid #ff9000; box-sizing: border-box; font-size: 14px;}
+.widgetNavigate.position{left: 0; top: 0; width: 100%;}
+.widgetNavigate a{text-decoration: none;}
+.widgetNavigate > .body{margin: auto;}
+.widgetNavigate .icon{display: inline-block; background-repeat: no-repeat; background-position: left center;}
+.widgetNavigate .nav{float: right;}
+.widgetNavigate .nav > .item{display: inline-block; padding: 0 25px; color: #666; border-bottom: 3px solid transparent; box-sizing: border-box; position: relative;}
+.widgetNavigate .nav > .item:hover{border-bottom-color: #ff9000; color: #ff9000;}
+.widgetNavigate .nav > span.item{cursor: default;}
+.widgetNavigate .nav > a.item{cursor: pointer;}
+.widgetNavigate .nav > span.item:hover > .menu{display: block;}
+.widgetNavigate .nav > .selected{border-bottom-color: #ff9000; color: #ff9000; background-color: rgba(0, 0, 0, .03);}
+.widgetNavigate .menu{position: absolute; left: 0; border: solid 1px #ff9000; background-color: rgba(255,255,255,.95); line-height: 1.5; min-width: 120px; padding: 1px; display: none; box-sizing: border-box; z-index: 1000;}
+.widgetNavigate .menu > span.item{cursor: default;}
+.widgetNavigate .menu > a.item{cursor: pointer;}
+.widgetNavigate .menu > .item{display: block; padding: 10px; color: #666; white-space: nowrap;}
+.widgetNavigate .menu > .item:hover{background-color: #ff9000; color: #FFF;}
+
+@media (max-width: 700px) {
+    .widgetNavigate .icon{margin-left: 10px;}
+    .widgetNavigate .menu{left: initial; right: 0;}
+}
+</style>`);
 

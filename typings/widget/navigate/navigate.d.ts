@@ -3,6 +3,7 @@ interface WidgetNavigateOptions {
     position?: WidgetNavigatePosition;
     height?: number;
     width?: string;
+    iconUrl?: string;
 }
 
 interface WidgetNavigateMenuItem {

@@ -19,6 +19,8 @@ var WidgetNavigate = (function () {
                 this.height = opts.height;
             if (opts.width !== undefined)
                 this.width = opts.width;
+            if (opts.iconUrl !== undefined)
+                this.iconUrl = opts.iconUrl;
         }
     }
     Object.defineProperty(WidgetNavigate.prototype, "icon", {
@@ -94,7 +96,7 @@ var WidgetNavigate = (function () {
         set: function (val) {
             if (val !== this._width) {
                 this._width = val;
-                this.dom.children(".body").css({ "width": this._width });
+                this.dom.children(".body").css({ "max-width": this._width });
             }
         },
         enumerable: true,
@@ -156,4 +158,5 @@ var WidgetNavigate = (function () {
     WidgetNavigate.verison = "0.1";
     return WidgetNavigate;
 }());
+$("head").prepend("<style>\n.widgetNavigate{border-bottom: 1px solid #ff9000; box-sizing: border-box; font-size: 14px;}\n.widgetNavigate.position{left: 0; top: 0; width: 100%;}\n.widgetNavigate a{text-decoration: none;}\n.widgetNavigate > .body{margin: auto;}\n.widgetNavigate .icon{display: inline-block; background-repeat: no-repeat; background-position: left center;}\n.widgetNavigate .nav{float: right;}\n.widgetNavigate .nav > .item{display: inline-block; padding: 0 25px; color: #666; border-bottom: 3px solid transparent; box-sizing: border-box; position: relative;}\n.widgetNavigate .nav > .item:hover{border-bottom-color: #ff9000; color: #ff9000;}\n.widgetNavigate .nav > span.item{cursor: default;}\n.widgetNavigate .nav > a.item{cursor: pointer;}\n.widgetNavigate .nav > span.item:hover > .menu{display: block;}\n.widgetNavigate .nav > .selected{border-bottom-color: #ff9000; color: #ff9000; background-color: rgba(0, 0, 0, .03);}\n.widgetNavigate .menu{position: absolute; left: 0; border: solid 1px #ff9000; background-color: rgba(255,255,255,.95); line-height: 1.5; min-width: 120px; padding: 1px; display: none; box-sizing: border-box; z-index: 1000;}\n.widgetNavigate .menu > span.item{cursor: default;}\n.widgetNavigate .menu > a.item{cursor: pointer;}\n.widgetNavigate .menu > .item{display: block; padding: 10px; color: #666; white-space: nowrap;}\n.widgetNavigate .menu > .item:hover{background-color: #ff9000; color: #FFF;}\n\n@media (max-width: 700px) {\n    .widgetNavigate .icon{margin-left: 10px;}\n    .widgetNavigate .menu{left: initial; right: 0;}\n}\n</style>");
 //# sourceMappingURL=navigate.js.map
