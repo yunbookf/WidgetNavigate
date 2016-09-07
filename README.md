@@ -1,113 +1,73 @@
 # WidgetNavigate
 方便的创建网站的导航条，支持弹出菜单。  
 Easily create Web site navigation, supports pop-up menus.  
-
-```typescript
-let wn: WidgetNavigate = new WidgetNavigate("#topNav", {
-    width: "800px"
-});
-wn.addItem({
-    text: "Demo page",
-    url: "./demo.html"
-});
-```
-
-可随时修改一些样式：  
-Some styles can be modified at any time:  
-
-```typescript
-wn.height = 70;
-```
-
-## 如果是 SPA 的时候的操作办法 / How SPA
-
-很简单，只要绑定 onClick 事件不指定 url 属性即可：  
-Is very simple, only need to bind the onClick event:  
-
-```typescript
-wn.addItem({
-    text: "AJAX",
-    onClick: function(): void{
-        // $.ajax({});
-    }
-});
-```
-
-也可以设置鼠标悬浮时弹出菜单：  
-Can also be set when mouse popup menu:  
-
-```typescript
-wn.addItem({
-    text: "Pop menu",
-    menu: [{
-        text: "first",
-        onClick: function(): void {
-            alert("the first");
-        }
-    }, {
-        text: "Google.com",
-        url: "http://www.google.com"
-    }]
-});
-```
-
-## SEO 以及 DOM 结构 / SEO & DOM
-非常简单，在 HTML 代码当中，只需要排列好需要做 SEO 的 a 标签，像下面这样：  
-Very simple, in the HTML code, you only need the a tag line needs to do SEO, like this:  
+  
+自动自适应手机和PC，菜单会自动缩放到右上角的一个按钮。  
+Automatic Adaptive Mobile and PC, the menu will automatically zoom into the top right corner of a button.  
+  
+本项目依赖 ModuleTouch，需要在引用 navigate.min.js 的同时引用 touch.min.js。  
+This project has a dependency on ModuleTouch, you need to reference navigate.min.js reference touch.min.js.  
+  
+[ModuleTouch on Github](https://github.com/yunbookf/ModuleTouch)
+  
+之后需要在网页上创建 HTML 模板，类似如下：  
+Then need to create HTML on the Web page template, similar to the following:  
 
 ```html
-<div id="topNav">
-    <a href="http://www.maiyun.net">Maiyun.NET</a>
-    <a href="http://www.google.com">Google.COM</a>
-</div>
-```
-
-在组件被创建之后，其中的 a 标签会被程序自动替换掉，替换后的结构类似下面这样：  
-n the component after it has been created, in which a label is automatically replaced, replacement structure similar to the following:  
-
-```html
-<div id="topNav">
-    <div class="body">
-        <a class="icon"></a>
-        <div class="nav">
-            <a href="./demo.html">
-                <span class="text">first</span>
-            </a>
-            <span class="item">
-                <span class="text"></span>
-                <div class="menu">
-                    <a class="item">menu first</a>
+<div class="navbar-wn position-wn">
+    <div class="content-wn">
+        <div class="header-wn">
+            <a href="javascript:void(0);"><img src="logo.jpg" width="60" height="45"></a>
+            <div class="header-right-wn">
+                <div class="collapse-btn-wn">
+                    <div class="bar-wn"></div>
+                    <div class="bar-wn"></div>
+                    <div class="bar-wn"></div>
                 </div>
-            </span>
+            </div>
+        </div>
+        <div class="collapse-wn right-wn">
+            <div class="list-wn">
+                <a class="list-item-wn" href="./demo.html">index</a>
+                <a class="list-item-wn" href="http://hanguoshuai.com" target="_blank">HGS's blog</a>
+                <a class="list-item-wn" href="http://www.maiyun.net" target="_blank">Maiyun.NET</a>
+                <div class="list-menu-wn">
+                    <span class="list-item-wn">Pop menu<span class="caret-wn"></span></span>
+                    <div class="menu-wn">
+                        <a class="menu-item-wn" href="javascript:void(0);">one</a>
+                        <a class="menu-item-wn" href="javascript:void(0);">two</a>
+                        <a class="menu-item-wn" href="javascript:void(0);">three</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 ```
-
+  
+## API
+  
+与 navbar-wn 并列的 position-wn 可省略，则表示导航条不浮动。  
+与 collapse-wn 并列的 right-wn 可省略，则表示菜单居左而不是居右。  
+header-right-wn 所在的 DOM 不可省略，代表着手机浏览的时候右上角的菜单按钮。  
+再引用 JS 文件后，系统会自动创建默认的 CSS，您可以引用您自己写的 CSS 来覆盖默认样式，参见 demo.html。  
+  
+And navbar-wn tie position-wn can be omitted, it means that the navigation bar is not floating.  
+And collapse-Wn tie right-Wn can be omitted, it means that the menu left instead of right.  
+header-right-wn DOM is not omitted, represents mobile phone browsing when on the upper right corner of the menu button.  
+After you reference the JS file, the system will automatically create the default CSS, you can reference your own CSS to override default styles, see demo.html.  
+  
 ## 浏览器兼容 / Compatibility
 我们仅兼容现代浏览器，正如我们在演示的时候使用了 jQuery 3.1.0 一样。  
 We are only compatible with modern browsers, like we use jQuery 3.1.0.  
 
-## API
-
-```typescript
-interface WidgetNavigateInstance {
-    dom: JQuery;
-    icon: boolean;
-    iconUrl: string;
-    position: WidgetNavigatePosition;
-    height: number;
-    width: string;
-    selected: number;
-    menuOffsetTop: number;
-
-    addItem(o: WidgetNavigateItem): void;
-}
-```
-
+## 关于 0.1 的升级 / About 0.1 upgrades
+0.1 版本不可平滑升级，因为代码已经完全重写。  
+Version 0.1 is not a smooth upgrade, since the code has been completely rewritten.  
+  
 ## 关于 / About
-本组件由迈云网络开发开源，欢迎各位PR。  
-Powered by Maiyun.net, welcome to pull request.  
-http://www.maiyun.net  
+本组件由韩国帅开发开源，欢迎各位PR。  
+Powered by hanguoshuai.com, welcome to pull request.  
+http://hanguoshuai.com  
   
 Translation is provided by Microsoft.

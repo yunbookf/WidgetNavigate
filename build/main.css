@@ -1,11 +1,31 @@
 /* --- 自定义 CSS --- */
+html,body{font-size: 14px;}
+body{padding-top: 150px;}
 
-#topNav .icon, #screenNav .icon{background-image: url(logo.jpg); background-size: 65%; width: 80px;}
-#screen{width: 800px; margin: 150px auto 0 auto; border: 20px solid #999; height: 300px; background-color: #000;}
-#screenNav{border-bottom-color: rgba(255,255,255,.3);}
+#screen{max-width: 800px; margin: 0 auto 0 auto; border: 10px solid #999; height: 500px; background-color: #000;}
+#screenNav{border-bottom-color: rgba(255,255,255,.3); background-color: transparent; color: #FFF;}
 #screenNav:hover{background-color: rgba(255,255,255,.1);}
-#screenNav .nav > .item:hover{border-bottom-color: #4c4c4c; color: #999;}
-#screenNav .menu{border-color: #4c4c4c; background-color: rgba(0,0,0,.8);}
-#screenNav .menu > .item:hover{background-color: rgba(255,255,255,.1); color: #999;}
+#screenNav .header-wn > a{opacity: .5;}
+
+#screenNav .collapse-btn-wn{border-color: rgba(255,255,255,.3);}
+#screenNav .collapse-btn-wn.hover{background-color: rgba(255,255,255,.1);}
+
+#screenNav .list-wn{margin-left: 20px;}
+#screenNav .list-item-wn:hover, #screenNav .list-item-wn.hover{border-bottom: solid 3px #4c4c4c; color: #FFF; background-color: transparent;}
+#screenNav .list-item-wn, #screenNav .menu-item-wn{color: #999; line-height: 30px; height: 50px;}
+
+#screenNav .menu-wn{background-color: rgba(0,0,0,.7); border-color: rgba(255,255,255,.3);}
+#screenNav .menu-item-wn:hover{background-color: rgba(255,255,255,.1); color: #FFF;}
 
 .tip{text-align: center; margin: 30px 0 0 0;}
+
+@media (max-width: 800px) {
+	#screenNav:hover{background-color: transparent;}
+	#screenNav:hover .header-wn{background-color: rgba(255,255,255,.1);}
+	#screenNav .header-wn, #screenNav .collapse-wn{border-bottom-color: rgba(255,255,255,.3);}
+	
+	#screenNav .list-wn{margin-left: inherit;}
+	#screenNav .list-item-wn{padding: 10px;}
+	#screenNav .list-item-wn:hover, #screenNav .list-item-wn.hover{background-color: rgba(255,255,255,.1); border-bottom: none;}
+	#screenNav .menu-item-wn{padding: 10px 10px 10px 30px;}
+}

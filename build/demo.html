@@ -2,15 +2,77 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 		<title>WidgetNavigate Demo</title>
 		<link rel="stylesheet" href="main.css">
 		<script src="jquery-3.1.0.min.js"></script>
+		<script src="touch.min.js?20160907103919"></script>
 		<script src="navigate.js"></script>
 		<script src="main.js"></script>
 	</head>
 	<body>
-		<div id="topNav"></div>
-		<div id="screen"><div id="screenNav"></div></div>
+		<div id="firstNav" class="navbar-wn position-wn">
+			<div class="content-wn">
+				<div class="header-wn">
+					<a href="javascript:void(0);"><img src="logo.jpg" width="60" height="45"></a>
+					<div class="header-right-wn">
+						<div class="collapse-btn-wn">
+							<div class="bar-wn"></div>
+							<div class="bar-wn"></div>
+							<div class="bar-wn"></div>
+						</div>
+					</div>
+				</div>
+				<div class="collapse-wn right-wn">
+					<div class="list-wn">
+						<a class="list-item-wn" href="./demo.html">首页</a>
+						<a class="list-item-wn" href="http://hanguoshuai.com" target="_blank">韩国帅博客</a>
+ 						<a class="list-item-wn" href="http://www.maiyun.net" target="_blank">迈云网络</a>
+						<div class="list-menu-wn">
+							<span class="list-item-wn">下滑菜单<span class="caret-wn"></span></span>
+							<div class="menu-wn">
+								<a class="menu-item-wn" href="javascript:void(0);">第一项</a>
+								<a class="menu-item-wn" href="javascript:void(0);">第二项</a>
+								<a class="menu-item-wn" href="javascript:void(0);">第三项</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="screen">
+			<div id="screenNav" class="navbar-wn">
+				<div class="content-wn">
+					<div class="header-wn">
+						<a href="javascript:void(0);"><img src="logo.jpg" width="40" height="30"></a>
+						<div class="header-right-wn">
+							<div class="collapse-btn-wn">
+								<div class="bar-wn"></div>
+								<div class="bar-wn"></div>
+								<div class="bar-wn"></div>
+							</div>
+						</div>
+					</div>
+					<div class="collapse-wn">
+						<div class="list-wn">
+							<span class="list-item-wn">啥也没有</span>
+							<span id="alertSpan" class="list-item-wn">点击弹窗</span>
+							<div class="list-menu-wn">
+								<span class="list-item-wn">呵呵哒<span class="caret-wn"></span></span>
+								<div class="menu-wn">
+									<a class="menu-item-wn" href="javascript:void(0);">第一项</a>
+									<a class="menu-item-wn" href="javascript:void(0);">第二项</a>
+									<a class="menu-item-wn" href="javascript:void(0);">第三项</a>
+								</div>
+							</div>
+							<span class="list-item-wn">啥也没有</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="tip">另一个样式的演示</div>
 	</body>
 </html>
