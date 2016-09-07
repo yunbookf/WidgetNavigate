@@ -6,7 +6,7 @@
 
 class WidgetNavigate {
 
-    public static version: string = "1.0";
+    public static version: string = "1.1";
 
 }
 
@@ -25,7 +25,10 @@ $(document).ready(function(): void {
         if ($(e.target).parents(".navbar-wn").length === 0)
             $(this).find(".show-wn").removeClass("show-wn");
     });
-    $("head").prepend(`<style>
+
+});
+
+$("head").prepend(`<style>
 .navbar-wn{background-color: #f8f8f8; border-bottom: 1px solid #e7e7e7; color: #333; z-index: 1000;}
 .navbar-wn *{box-sizing: border-box;}
 .navbar-wn a{color: #333; text-decoration: none;}
@@ -40,13 +43,13 @@ $(document).ready(function(): void {
 .navbar-wn .header-wn{display: flex; display: -webkit-box;}
 .navbar-wn .header-wn > a, .navbar-wn .header-wn > span{padding: 10px; display: block;}
 .navbar-wn .collapse-btn-wn{border: 1px solid #ddd; padding: 9px 10px; margin-right: 15px; border-radius: 4px; height: auto; display: none;}
-.navbar-wn .collapse-btn-wn.hover{background-color: #e7e7e7;}
+.navbar-wn .collapse-btn-wn.hover-mt{background-color: #e7e7e7;}
 .navbar-wn .collapse-btn-wn .bar-wn{height: 2px; background-color: #888; width: 22px; border-radius: 1px; margin-top: 4px;}
 .navbar-wn .collapse-btn-wn .bar-wn:first-child{margin-top: 0;}
 
 .navbar-wn .list-wn{display: flex; display: -webkit-box;}
 .navbar-wn .list-item-wn{display: flex; display: -webkit-box; align-items: center; -webkit-box-align: center; padding: 10px 20px; position: relative; cursor: pointer;}
-.navbar-wn .list-item-wn:hover, .navbar-wn .list-item-wn.hover{background-color: #e7e7e7;}
+.navbar-wn .list-item-wn:hover, .navbar-wn .list-item-wn.hover-mt{background-color: #e7e7e7;}
 .navbar-wn .list-menu-wn{display: flex; display: -webkit-box; position: relative;}
 
 .navbar-wn .menu-wn{position: absolute; left: 0; top: 100%; background-color: #f8f8f8; border: 1px solid #e7e7e7; display: none;}
@@ -70,6 +73,4 @@ $(document).ready(function(): void {
     .navbar-wn .menu-item-wn{padding: 20px 20px 20px 60px;}
 }
 </style>`);
-
-});
 
