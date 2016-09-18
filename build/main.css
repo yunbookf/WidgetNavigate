@@ -8,10 +8,10 @@ body{padding-top: 150px;}
 #screenNav .header-wn > a{opacity: .5;}
 
 #screenNav .collapse-btn-wn{border-color: rgba(255,255,255,.3);}
-#screenNav .collapse-btn-wn.hover-mt{background-color: rgba(255,255,255,.1);}
+#screenNav .collapse-btn-wn.active-mt{background-color: rgba(255,255,255,.1);}
 
 #screenNav .list-wn{margin-left: 20px;}
-#screenNav .list-item-wn:hover, #screenNav .list-item-wn.hover-mt{border-bottom: solid 3px #4c4c4c; color: #FFF; background-color: transparent;}
+#screenNav .list-item-wn:hover, #screenNav .list-item-wn.active-mt{border-bottom: solid 3px #4c4c4c; color: #FFF; background-color: transparent;}
 #screenNav .list-item-wn, #screenNav .menu-item-wn{color: #999; line-height: 30px; height: 50px;}
 
 #screenNav .menu-wn{background-color: rgba(0,0,0,.7); border-color: rgba(255,255,255,.3);}
@@ -26,6 +26,6 @@ body{padding-top: 150px;}
 	
 	#screenNav .list-wn{margin-left: inherit;}
 	#screenNav .list-item-wn{padding: 10px;}
-	#screenNav .list-item-wn:hover, #screenNav .list-item-wn.hover-mt{background-color: rgba(255,255,255,.1); border-bottom: none;}
+	#screenNav .list-item-wn:hover, #screenNav .list-item-wn.active-mt{background-color: rgba(255,255,255,.1); border-bottom: none;}
 	#screenNav .menu-item-wn{padding: 10px 10px 10px 30px;}
 }

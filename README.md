@@ -5,8 +5,8 @@ Easily create Web site navigation, supports pop-up menus.
 自动自适应手机和PC，菜单会自动缩放到右上角的一个按钮。  
 Automatic Adaptive Mobile and PC, the menu will automatically zoom into the top right corner of a button.  
   
-本项目依赖 ModuleTouch，需要在引用 navigate.min.js 的同时引用 touch.min.js。  
-This project has a dependency on ModuleTouch, you need to reference navigate.min.js reference touch.min.js.  
+本项目依赖 ModuleTouch，需要在引用 navigate.min.js、navigate.min.css 的同时引用 touch.min.js v0.4+。  
+This project has a dependency on ModuleTouch, you need to reference navigate.min.js reference touch.min.js v0.4+.  
   
 [ModuleTouch on Github](https://github.com/yunbookf/ModuleTouch)
   
@@ -71,3 +71,9 @@ Powered by hanguoshuai.com, welcome to pull request.
 http://hanguoshuai.com  
   
 Translation is provided by Microsoft.
+
+## 更新日志 / ChangeLog
+
+### v1.2 - 2016-09-18
+[CHANGE]JS 文件与 CSS 内容分离，这样 JS 可以异步加载也能使界面的 UI 效果保证不闪烁。  
+[UPDATE]ModuleTouch 的支持更新到 0.4+，解决了页面滚动的时候导航条消失的 BUG。  
