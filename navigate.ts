@@ -12,14 +12,16 @@ class WidgetNavigate {
 
 // --- 右上角的点击伸缩 ---
 $(document).ready(function(): void {
-    ModuleTouch.tap(".navbar-wn .collapse-btn-wn", function(): boolean {
+    ModuleTouch.tap(".navbar-wn .collapse-btn-wn", function(e: JQueryEventObject): any {
         let collapseNode: JQuery = $(this).parents(".navbar-wn:eq(0)").find(".collapse-wn");
         $("body").find(".show-wn").not(collapseNode).removeClass("show-wn");
         collapseNode.toggleClass("show-wn");
+        e.preventDefault();
         return false;
     });
-    ModuleTouch.tap(".navbar-wn .list-menu-wn > .list-item-wn", function(e: JQueryEventObject): boolean {
+    ModuleTouch.tap(".navbar-wn .list-menu-wn > .list-item-wn", function(e: JQueryEventObject): any {
         $(this).next().toggleClass("show-wn");
+        e.preventDefault();
         return false;
     });
     ModuleTouch.tap("body", function(e: JQueryEventObject): void {
